@@ -11,7 +11,7 @@ Portfolio site.
 
 <p align="left">
   <a href="https://github.com/andy-dam">
-    <img src="https://skillicons.dev/icons?i=vite,react,tailwind,ts,bun&perline=8" />
+    <img src="https://skillicons.dev/icons?i=vite,react,tailwind,ts&perline=8" />
   </a>
 </p>
 
