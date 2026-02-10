@@ -1,0 +1,57 @@
+import { BoxReveal } from "@/components/magicui/box-reveal";
+
+interface Experience {
+  company: string;
+  position: string;
+  date: string;
+  location: string;
+  description: string;
+  boxColor: string;
+  delay?: number;
+}
+
+export function Experience() {
+  const experiences: Experience[] = [
+    {
+      company: "Paycom",
+      position: "Software Development Intern",
+      date: "May 2025 - Aug 2025",
+      location: "Irving, TX",
+      description:
+        "Built a full-stack survey application to help the company take control of their own data instead of relying on external vendors. Used React.js and TypeScript on the frontend, .NET Core and MySQL on the backend. Working across the full stack from API design to user interface was really rewarding.",
+      boxColor: "#a6e3a1",
+      delay: 0.2,
+    },
+  ];
+
+  return (
+    <div className="flex flex-col flex-1 max-w-md gap-3">
+      <h1 className="text-xl font-semibold">Experience</h1>
+      {experiences.map((exp, index) => (
+        <div key={index}>
+          <div className="mb-3">
+            <BoxReveal boxColor={exp.boxColor} delay={exp.delay}>
+              <div className="group/title">
+                <h2 className="font-semibold tracking-wider">
+                  <span className="tracking-wider underline transition-all duration-200 decoration-green decoration-2 underline-offset-4 group-hover/title:decoration-3">
+                    {exp.company}
+                  </span>
+                  <span className="mx-2 text-neutral-500 dark:text-neutral-400 font-normal">
+                    •
+                  </span>
+                  <span className="font-normal text-neutral-600 dark:text-neutral-400">
+                    {exp.position}
+                  </span>
+                </h2>
+              </div>
+            </BoxReveal>
+          </div>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-3">
+            {exp.date}
+          </p>
+          <p className="font-mono">{exp.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
